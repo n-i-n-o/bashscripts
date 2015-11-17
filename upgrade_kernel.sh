@@ -2,7 +2,7 @@
 
 ## Upgrades to Kernel 4.2 → Tested on Debian 8 | Ubuntu 15.04 (both x64)
 ## Only run if you know what you're doing or just run in a virtual environment
-## remove the echo's in nested if-loop when ready to implement and after verfiying script is functioning
+## remove the echo's in nested if when ready to implement and after verfiying script is functioning
 
 if [[ $UID == 0 ]]; then
 	echo -e "\e[1m[*] Preparing for essential build up: may take a while\e[0m"

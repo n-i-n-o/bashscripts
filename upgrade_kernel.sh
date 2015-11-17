@@ -30,7 +30,7 @@ if [[ -d $dir_name ]]; then
 		echo "cp /boot/config-$(uname -r) .config"
 		echo -e "\e[1m[*] Copied origianl kernel config successfully\e[0m"
 		echo "make menuconfig"
-		echo -e "\e[1m[*] Cleaning up source tree and getting ready for install\e[0m"
+		echo -e "\e[1m[*] Cleaning up source tree and preparing to compile kernel\e[0m"
 		echo "make-kpkg clean"
 		echo
 		echo -e "\e[1m[*] Just leave, don't start watching porn: you need the CPU resources, this is gonna take a long time\e[0m"
@@ -46,9 +46,9 @@ else
 	exit 1
 fi
 
-echo -e "\e[1m[*] Almost finished, finishing up ...\e[0m"
+echo -e "\e[1m[*] Almost finished, installing new kernel ...\e[0m"
 dpkg -i linux-headers-4.2.5_1.0.NAS_amd64.deb 2>/dev/null && dpkg -i linux-image-4.2.5_1.0.NAS_amd64.deb 2>/dev/null  || { echo -e "\e[1m[!] You are not supposed to see this message ... [!]\e[0m" >&2; exit 1; }
 
-echo "e[1m[*] Successful install → rebooting in 20 seconds ...\e[0m"
+echo "e[1m[*] Successfully installed → rebooting in 20 seconds ...\e[0m"
 sleep 20s && shutdown -r now
 exit 0
